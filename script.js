@@ -4,25 +4,25 @@ const argsInputs = document.querySelectorAll('.args-inputs')
 const resultsInputs = document.querySelectorAll('.results-inputs')
 const argsScreen = document.querySelector('#arguments')
 const resultsScreen = document.querySelector('#results')
-let quadraticFunctionValues = []
 
 const quadraticFunction = {
+    Values: [],
     calculateDelta: function () {
-        return Math.pow(quadraticFunctionValues[1], 2) - 4*quadraticFunctionValues[0]*quadraticFunctionValues[2]
+        return Math.pow(this.Values[1], 2) - 4*this.Values[0]*this.Values[2]
     },
     calculateResult1: function () {
         let delta = this.calculateDelta()
-        return ((-1*(quadraticFunctionValues[1])) - Math.sqrt(delta)) / 2 * quadraticFunctionValues[0]
+        return ((-1*(this.Values[1])) - Math.sqrt(delta)) / 2 * this.Values[0]
     },
     calculateResult2: function () {
         let delta = this.calculateDelta()
-        return ((-1*(quadraticFunctionValues[1])) + Math.sqrt(delta)) / 2 * quadraticFunctionValues[0]
+        return ((-1*(this.Values[1])) + Math.sqrt(delta)) / 2 * this.Values[0]
     },
 }
 
 calculateButton.addEventListener('click', (e) => {
-    quadraticFunctionValues.push(Number(argsInputs[0].value), Number(argsInputs[1].value), Number(argsInputs[2].value))
-    console.log('Zapisane dane: ' + quadraticFunctionValues)
+    quadraticFunction.Values.push(Number(argsInputs[0].value), Number(argsInputs[1].value), Number(argsInputs[2].value))
+    console.log('Zapisane dane: ' + quadraticFunction.Values)
     resultsInputs[0].value = quadraticFunction.calculateDelta()
     resultsInputs[1].value = quadraticFunction.calculateResult1()
     resultsInputs[2].value = quadraticFunction.calculateResult2()
@@ -38,5 +38,5 @@ calculateButton.addEventListener('click', (e) => {
 backButton.addEventListener('click', (e) => {
     argsScreen.style.display = 'flex'
     resultsScreen.style.display = 'none'
-    quadraticFunctionValues.length = 0
+    quadraticFunction.Values.length = 0
 })
