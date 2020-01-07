@@ -15,12 +15,6 @@ body {
             font-size: 3rem;
             border: 1px solid;
             border-radius: 6px;
-            &:hover {
-                @media (min-width: 701px) {
-                    background: rgb(248, 248, 239);
-                    transition: .5s;
-                }
-            }
         }
         .btn {
             width: 150px;
