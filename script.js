@@ -12,11 +12,11 @@ const quadraticFunction = {
     },
     calculateResult1: function () {
         let delta = this.calculateDelta()
-        return ((-1*(this.Values[1])) - Math.sqrt(delta)) / 2 * this.Values[0]
+        return (-1*(this.Values[1]) - Math.sqrt(delta)) / 2 * this.Values[0]
     },
     calculateResult2: function () {
         let delta = this.calculateDelta()
-        return ((-1*(this.Values[1])) + Math.sqrt(delta)) / 2 * this.Values[0]
+        return (-1*(this.Values[1]) + Math.sqrt(delta)) / 2 * this.Values[0]
     },
 }
 
