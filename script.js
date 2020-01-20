@@ -29,7 +29,7 @@ calculateButton.addEventListener('click', (e) => {
     argsScreen.style.display = 'none'
     resultsScreen.style.display = 'flex'
     for (i=1; i<=2; i++) {
-        if (resultsInputs[i].value === 'NaN') {
+        if (isNaN(resultsInputs[i].value)) {
             resultsInputs[i].value = 'Brak'
         }
     }
